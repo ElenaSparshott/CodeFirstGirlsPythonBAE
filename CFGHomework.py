@@ -9,7 +9,7 @@ my_age = 29
 message = 'My name is {} and I am {} years old'.format(my_name, my_age)
 print(message)
 
-boxes = 6
+boxes = 12
 eggs = boxes * 6
 omelettes = eggs/4
 message = 'You can make {} omelettes with {} boxes of eggs'.format(omelettes, boxes)
