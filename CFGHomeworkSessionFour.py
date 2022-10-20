@@ -25,6 +25,8 @@ ticket = [3, 14, 24, 37, 44, 68, 70]
 winners = [random.randint(0, 70) for _ in range(7)]
 print(winners)
 
+if_won = print(cmp(ticket, winners))
+
 
 
 
