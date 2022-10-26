@@ -27,15 +27,18 @@
 # Question three
 
 import requests
+import json
 
 pokemonIds = [1, 2, 3, 4, 5, 6,]
 
-for x in pokemonIds:
-    url = "https://pokeapi.co/api/v2/pokemon/{}/".format(x)
-    response = requests.get(url)
-    pokemon = response.json()
+with open("pokemon.txt", "w") as text_file:
+    for x in pokemonIds:
+        url = "https://pokeapi.co/api/v2/pokemon/{}/".format(x)
+        response = requests.get(url)
+        pokemon = response.json()
 
-    print(pokemon['name'])
-    print(pokemon['moves'])
+        pokemon_name = (pokemon['name'])
+        pokemon_move = (pokemon['moves'][0])
 
+        text_file.writelines([pokemon_name + '\n', json.dumps(pokemon_move) + '\n'])
 
