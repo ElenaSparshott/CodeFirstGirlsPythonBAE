@@ -38,7 +38,22 @@ with open("pokemon.txt", "w") as text_file:
         pokemon = response.json()
 
         pokemon_name = (pokemon['name'])
-        pokemon_move = (pokemon['moves'][0])
+        pokemon_move = (pokemon['moves'][0]["move"]["name"])
 
         text_file.writelines([pokemon_name + '\n', json.dumps(pokemon_move) + '\n'])
 
+# import requests
+#
+# pokemon_number = [5, 26, 14, 7, 74, 13]
+#
+# for i in pokemon_number:
+#     url = 'https://pokeapi.co/api/v2/pokemon/{}/'.format(i)
+#     url2 = 'https://pokeapi.co/api/v2/move/{}/'.format(i)
+#     response = requests.get(url)
+#     response2 = requests.get(url2)
+#     pokemon = response.json()
+#     pokemon_moves = response2.json()
+#     all_moves = all_moves + " " + pokemon_moves["name"]
+#     end = str((pokemon['name'], all_moves)) + '\n'
+#     with open("pokemon.txt","a") as pokemon_file:
+#         pokemon_file.write(end)
