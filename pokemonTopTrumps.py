@@ -14,12 +14,10 @@ def random_pokemon():
         'id': pokemon['id'],
         'height': pokemon['height'],
         'weight': pokemon['weight'],
-        'stats': pokemon['stats'],
+        'stats': pokemon['stats'][0]['base_stat'],
     }
 
-    # 'name_length' : len("name"),
-
-
+# 'name_length' : len("name"),
 # a = "Hello, World!"
 # print(len(a))
 
@@ -32,7 +30,8 @@ def run():
     # could have two cards flashing up
     # could assign number values to moves so can compare
     # could print results to text file to record
-    my_pokemon = random_pokemon()
+
+
     print('You were given     {}'.format(my_pokemon['name']))
     stat_choice = input('Which stat do you want to use? (id, height, weight, stats) ')
     opponent_pokemon = random_pokemon()
